@@ -13,6 +13,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
@@ -44,15 +45,8 @@ public class EmployeeMockControllerTest {
     }
 
     @Test
-    void list() throws Exception {
-        List<Employee> all = new ArrayList<>();
-        all.add(new Employee("Bilbo", "Baggins","burglar"));
-        when(employeeRepository.findAll()).thenReturn(all);
+    void one() throws Exception {
 
-        mockMvc.perform(
-                        get("/employees"))
-                .andDo(print())
-                .andExpect(status().isOk());
     }
 
 }

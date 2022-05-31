@@ -27,14 +27,6 @@ class EmployeeControllerTest {
     void tearDown() {
     }
 
-    /*
-    @Test
-    void all() {
-        RestTemplate restTemplate = new RestTemplate();
-        Employee = restTemplate.getForEntity("http://localhost:8080",Employee.class);
-    }
-     */
-
     @Test
     void all() {
         webTestClient.get()
@@ -42,12 +34,12 @@ class EmployeeControllerTest {
                 .exchange()
                 .expectStatus().isOk()
                 .expectHeader().valueEquals("Content-Type","application/hal+json")
-                .expectBody()
-                .jsonPath("$.length()").isEqualTo(2);
-    }
+                .expectBody();
 
+    }
 
     @Test
     void one() {
+
     }
 }
